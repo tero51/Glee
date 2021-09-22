@@ -24,7 +24,7 @@ body {
 
 .title {
   font-size: 36px;
-  line-height: 1.625;
-  color: $title;
+  @extend %dmsans-700;
+  color: $titlebig;
 }
 

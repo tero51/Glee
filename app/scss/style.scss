@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 
@@ -19,6 +20,13 @@
     display: flex;
     align-items: center;
   }
+
+  &__title {
+    font-size: 36px;
+    line-height: 1.625;
+    @extend %rubik-500;
+    color: $title;
+  }
 }
 
 .logo {
@@ -31,10 +39,12 @@
 }
 
 .menu {
+  margin-left: 180px;
+
   &__list {
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
+    padding-bottom: 10px;
   }
 
   &__list-item+.menu__list-item {
@@ -101,7 +111,7 @@
     height: 16px;
     border-radius: 50%;
     background-color: #fff;
-    @extend %DMSans-400;
+    @extend %dmsans-400;
     bottom: 11px;
     left: 11px;
     font-size: 10px;
@@ -111,8 +121,238 @@
   }
 }
 
+.top-slider {
+  background-image: url('../images/decor/top-slider-bg.png');
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position: center center;
+  padding: 65px 0 45px;
 
 
+  &__container {
+    max-width: 1560px;
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  &__content {
+    padding-left: 192px;
+    padding-top: 144px;
+  }
+
+  &__title {
+    max-width: 470px;
+    font-size: 72px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    @extend %rubik-500;
+  }
+
+  &__text {
+    max-width: 345px;
+    margin-bottom: 64px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: $title;
+  }
+
+  &__link {
+    min-width: 200px;
+    font-size: 15px;
+    padding: 24px 105px 24px 28px;
+    color: #fff;
+    background-color: $accent;
+    @extend %rubik-500;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      right: 20px;
+      width: 22px;
+      height: 9px;
+      background-image: url('../images/icons/arrow-right.svg');
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin-left: 11px;
+
+      button {
+        font-size: 11px;
+        color: $default;
+        background-color: #fde3cc;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: none;
+      }
+
+      &.slick-active {
+        button {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.top-info {
+  &__container {
+    max-width: 1770px;
+    background-color: #fef7f0;
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 70px;
+  }
+
+  &__inner-item {
+    display: flex;
+    padding: 55px 150px 55px 0;
+    border-right: 1px solid #e8e4df;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__box {
+    margin-left: 35px;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 2.2;
+    @extend %dmsans-700;
+    color: #414141;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.8;
+    @extend %dmsans-500;
+    color: #585858;
+  }
+}
+
+.products {
+  padding: 75px 0;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 35px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list-item {
+    margin-left: 28px;
+    margin-bottom: 80px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__list-link {
+    color: $rare;
+    @extend %dmsans-700;
+    font-size: 16px;
+    transition: all .5s;
+
+    &:hover {
+      color: $titlebig;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px 30px;
+  }
+
+  &__link {
+    display: inline-block;
+  }
+}
+
+.products-item {
+  max-width: 270px;
+  box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+  text-align: center;
+
+  &__img-box {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      height: 270px;
+      object-fit: none;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-align: center;
+    padding-top: 15px;
+    margin-left: 10px;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translateY(300%);
+    transition: all .3s;
+
+    path {
+      transition: all .3s;
+    }
+  }
+
+  &__link:hover {
+    background-color: $accent;
+    path {
+      fill: #fff;
+    }
+  }
+
+
+  &__images {
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    margin-bottom: 40px;
+  }
+
+  &:hover {
+    .products-item__link {
+      transform: translateY(-85px);
+    }
+  }
+}
 
 
 
